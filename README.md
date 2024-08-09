@@ -53,7 +53,7 @@ $memoryLimiter->setMemoryLimitToCurrentlyAvailableMemory(false);
 $memoryLimiter->setMemoryLimitToCurrentlyAvailableMemory(
     limitToPercentageOfAvailableMemory: 50
 );
-````
+```
 
 ## Acknowledgments
 
