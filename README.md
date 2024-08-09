@@ -1,7 +1,7 @@
 # Memory Limiter
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/orlandothoeny/memory-limiter)](https://packagist.org/packages/orlandothoeny/memory-limiter)
-[![PHP Version Require](http://poser.pugx.org/orlandothoeny/memory-limiter/require/php)](https://packagist.org/packages/orlandothoeny/memory-limiter)
+[![PHP Version](https://img.shields.io/badge/php-%3E=8.2-rgb(120,%20124,%20181)?logo=php)](https://packagist.org/packages/orlandothoeny/memory-limiter)
 [![codecov](https://codecov.io/github/orlandothoeny/memory-limiter/graph/badge.svg?token=GRIYCXT6SP)](https://codecov.io/github/orlandothoeny/memory-limiter)
 ![PHPStan level](https://img.shields.io/badge/phpstan_level-9-rgb(37,99,235))
 ![Dependencies](https://img.shields.io/badge/dependency_count-0-885630?logo=composer)
