@@ -5,7 +5,8 @@
 [![codecov](https://codecov.io/github/orlandothoeny/memory-limiter/graph/badge.svg?token=GRIYCXT6SP)](https://codecov.io/github/orlandothoeny/memory-limiter)
 ![PHPStan level](https://img.shields.io/badge/phpstan_level-9-rgb(37,99,235))
 ![Dependencies](https://img.shields.io/badge/dependency_count-0-885630?logo=composer)
-[![License](https://poser.pugx.org/orlandothoeny/memory-limiter/license.svg)](https://packagist.org/packages/orlandothoeny/memory-limiter)
+[![License](https://img.shields.io/github/license/orlandothoeny/memory-limiter
+)](https://packagist.org/packages/orlandothoeny/memory-limiter)
 [![Downloads](https://poser.pugx.org/orlandothoeny/memory-limiter/d/total.svg)](https://packagist.org/packages/orlandothoeny/memory-limiter)
 
 Memory Limiter is a PHP library that contains functionality to read the currently available/free memory of the system and to set the PHP memory limit according to the available memory.
