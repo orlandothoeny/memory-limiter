@@ -1,0 +1,73 @@
+name: 'CI'
+
+env:
+  PHP_VERSION: 8.3
+  COMPOSER_VERSION: 2.x
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: "15 0 * * *"
+
+jobs:
+  phpunit:
+    name: PHPUnit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install PHP with xDebug
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          coverage: xdebug
+
+      - uses: php-actions/composer@v6
+        with:
+          php_version: ${{ env.PHP_VERSION }}
+          version: ${{ env.COMPOSER_VERSION }}
+
+      - name: PHPUnit tests
+        run: bin/phpunit --coverage-clover=coverage.xml --log-junit junit.xml
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: php-actions/composer@v6
+        with:
+          php_version: ${{ env.PHP_VERSION }}
+          version: ${{ env.COMPOSER_VERSION }}
+
+      - name: PHPStan
+        run: bin/phpstan analyse
+
+  php-cs-fixer:
+    name: PHP-CS-Fixer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: php-actions/composer@v6
+        with:
+          php_version: ${{ env.PHP_VERSION }}
+          version: ${{ env.COMPOSER_VERSION }}
+
+      - name: Code style
+        run: bin/php-cs-fixer fix --path-mode=override ./src ./tests --config=.php-cs-fixer.dist.php --verbose --diff --dry-run

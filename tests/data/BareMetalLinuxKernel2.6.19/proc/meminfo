@@ -1,0 +1,27 @@
+        total:    used:    free:  shared: buffers:  cached:
+Mem:  6141509632 6122868736 18640896        0 25358336 5993361408
+Swap: 2097307648        0 2097307648
+MemTotal:      5997568 kB
+MemFree:         18204 kB
+MemShared:           0 kB
+Buffers:         24764 kB
+Cached:        5852892 kB
+SwapCached:          0 kB
+Active:          68292 kB
+ActiveAnon:      16336 kB
+ActiveCache:     51956 kB
+Inact_dirty:   4481176 kB
+Inact_laundry: 1248512 kB
+Inact_clean:     96004 kB
+Inact_target:  1178796 kB
+HighTotal:     2097148 kB
+HighFree:         1232 kB
+LowTotal:      3900420 kB
+LowFree:         16972 kB
+SwapTotal:     2048152 kB
+SwapFree:      2048152 kB
+CommitLimit:   5046936 kB
+Committed_AS:   281504 kB
+HugePages_Total:     0
+HugePages_Free:      0
+Hugepagesize:     2048 kB

@@ -1,0 +1,46 @@
+{
+    "name": "orlandothoeny/memory-limiter",
+    "description": "PHP library that can read the available memory and set limit to currently free memory",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Orlando Thöny",
+            "email": "orlando@thoend.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MemoryLimiter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MemoryLimiter\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.62",
+        "phpstan/phpstan": "^1.11",
+        "phpstan/phpstan-phpunit": "^1.4",
+        "phpunit/phpunit": "^11.3"
+    },
+    "scripts": {
+        "test": "bin/phpunit",
+        "phpstan": "php -d memory_limit=-1 bin/phpstan analyse",
+        "cs-review": "bin/php-cs-fixer fix --path-mode=override ./src ./tests --config=.php-cs-fixer.dist.php --verbose --diff --dry-run",
+        "cs-fix": "bin/php-cs-fixer fix --using-cache=no --path-mode=override ./src ./tests --config=.php-cs-fixer.dist.php",
+        "verify": [
+            "@phpstan",
+            "@test",
+            "@cs-fix"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin",
+        "sort-packages": true
+    }
+}

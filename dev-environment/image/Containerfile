@@ -1,0 +1,15 @@
+ARG PHP_VERSION=8.3
+
+FROM docker.io/php:${PHP_VERSION}-alpine AS composer-installer
+
+COPY --chmod=774 ./install-composer.sh /tmp/install-composer.sh
+RUN /tmp/install-composer.sh
+
+FROM docker.io/php:${PHP_VERSION}-alpine
+
+COPY --from=composer-installer /usr/local/bin/composer /usr/local/bin/composer
+
+WORKDIR /app
+
+# Do not exit
+ENTRYPOINT ["tail", "-f", "/dev/null"]
