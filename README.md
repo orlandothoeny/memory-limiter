@@ -1,6 +1,6 @@
 # Memory Limiter
 
-[![Latest Stable Version](http://poser.pugx.org/orlandothoeny/memory-limiter/v)](https://packagist.org/packages/orlandothoeny/memory-limiter)
+[![Latest Stable Version](https://img.shields.io/packagist/v/orlandothoeny/memory-limiter)](https://packagist.org/packages/orlandothoeny/memory-limiter)
 [![PHP Version Require](http://poser.pugx.org/orlandothoeny/memory-limiter/require/php)](https://packagist.org/packages/orlandothoeny/memory-limiter)
 [![codecov](https://codecov.io/github/orlandothoeny/memory-limiter/graph/badge.svg?token=GRIYCXT6SP)](https://codecov.io/github/orlandothoeny/memory-limiter)
 ![PHPStan level](https://img.shields.io/badge/phpstan_level-9-rgb(37,99,235))
