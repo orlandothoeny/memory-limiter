@@ -4,4 +4,4 @@ services:
       context: ./dev-environment/image
       dockerfile: Containerfile
     volumes:
-      - ./:/app
+      - ./:/app:Z
